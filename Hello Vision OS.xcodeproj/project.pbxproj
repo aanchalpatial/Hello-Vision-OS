@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9E466D2A513A990051A350 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E466C2A513A990051A350 /* CarView.swift */; };
+		0D9E466F2A513AA70051A350 /* PlaneImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E466E2A513AA70051A350 /* PlaneImmersiveView.swift */; };
 		0DBC68472A4439BC0096FDC6 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 0DBC68462A4439BC0096FDC6 /* RealityKitContent */; };
 		0DBC68492A4439BC0096FDC6 /* Hello_Vision_OSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC68482A4439BC0096FDC6 /* Hello_Vision_OSApp.swift */; };
 		0DBC684B2A4439BC0096FDC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBC684A2A4439BC0096FDC6 /* ContentView.swift */; };
 		0DBC684D2A4439BD0096FDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC684C2A4439BD0096FDC6 /* Assets.xcassets */; };
 		0DBC68502A4439BD0096FDC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DBC684F2A4439BD0096FDC6 /* Preview Assets.xcassets */; };
+		0DD9F9A22A4DB99F002BE932 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9F9A12A4DB99F002BE932 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D9E466C2A513A990051A350 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		0D9E466E2A513AA70051A350 /* PlaneImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneImmersiveView.swift; sourceTree = "<group>"; };
 		0DBC68412A4439BC0096FDC6 /* Hello Vision OS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Vision OS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBC68452A4439BC0096FDC6 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		0DBC68482A4439BC0096FDC6 /* Hello_Vision_OSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_Vision_OSApp.swift; sourceTree = "<group>"; };
 		0DBC684A2A4439BC0096FDC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0DBC684C2A4439BD0096FDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DBC684F2A4439BD0096FDC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0DD9F9A12A4DB99F002BE932 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 			children = (
 				0DBC68482A4439BC0096FDC6 /* Hello_Vision_OSApp.swift */,
 				0DBC684A2A4439BC0096FDC6 /* ContentView.swift */,
+				0DD9F9A12A4DB99F002BE932 /* ContentViewModel.swift */,
+				0D9E466C2A513A990051A350 /* CarView.swift */,
+				0D9E466E2A513AA70051A350 /* PlaneImmersiveView.swift */,
 				0DBC684C2A4439BD0096FDC6 /* Assets.xcassets */,
 				0DBC684E2A4439BD0096FDC6 /* Preview Content */,
 			);
@@ -153,7 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DBC684B2A4439BC0096FDC6 /* ContentView.swift in Sources */,
+				0D9E466D2A513A990051A350 /* CarView.swift in Sources */,
+				0D9E466F2A513AA70051A350 /* PlaneImmersiveView.swift in Sources */,
 				0DBC68492A4439BC0096FDC6 /* Hello_Vision_OSApp.swift in Sources */,
+				0DD9F9A22A4DB99F002BE932 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
