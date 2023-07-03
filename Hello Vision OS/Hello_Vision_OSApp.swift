@@ -18,12 +18,12 @@ struct Hello_Vision_OSApp: App {
                 .environment(viewModel)
         }
 
-        WindowGroup(id: "CarView") {
+        WindowGroup(id: Topic.volume.id ?? "") {
             CarView()
         }
         .windowStyle(.volumetric)
 
-        ImmersiveSpace(id: "PlaneImmersiveView") {
+        ImmersiveSpace(id: Topic.fullSpaces.id ?? "") {
             PlaneImmersiveView()
         }
     }

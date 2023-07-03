@@ -13,33 +13,47 @@ struct ContentView: View {
     @Environment(ContentViewModel.self) private var viewModel
     @Environment(\.openWindow) private var openWindow
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
-    @State private var selectedItem: Item?
+    @Environment(\.dismissWindow) private var dismissWindow
+    @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
+    @State private var selectedTopic: Topic?
 
 
     var body: some View {
         @Bindable var viewModel = viewModel
 
         NavigationSplitView {
-            List(selection: $selectedItem) {
-                ForEach(viewModel.items) { item in
-                    NavigationLink(value: item) {
-                        Text(item.title)
+            List(selection: $selectedTopic) {
+                ForEach(viewModel.topics) { topic in
+                    NavigationLink(value: topic) {
+                        Text(topic.title)
                     }
                 }
             }
             .navigationTitle("Fundamentals")
         } detail: {
-            if let selectedItem = selectedItem {
-                VStack {
-                    Text(selectedItem.detail)
-                        .navigationTitle("Definition")
-                    if selectedItem.title == "Volume" {
-                        Button("Open CarView") {
-                            openWindow(id: "CarView")
+            if let selectedItem = selectedTopic {
+                VStack(spacing: 32) {
+                    Text(selectedItem.details)
+                        .navigationTitle("Details")
+                    switch selectedItem {
+                    case .window:
+                        Image(systemName: "macwindow")
+                            .resizable()
+                            .frame(width: 200, height: 150)
+                            .aspectRatio(contentMode: .fit)
+                    case .volume:
+                        Model3D(named: "Scene", bundle: realityKitContentBundle)
+                            .padding()
+                        Button("Open CarView in a dedicated volume") {
+                            Task {
+                                await dismissImmersiveSpace()
+                                openWindow(id: "CarView")
+                            }
                         }
-                    } else if selectedItem.title == "Full spaces" {
+                    case .fullSpaces:
                         Button("Open PlaneImmersiveView") {
                             Task {
+                                dismissWindow(id: "CarView")
                                 let result = await openImmersiveSpace(id: "PlaneImmersiveView")
                                 if case .error = result {
                                     assertionFailure("Unable to open PlaneImmersiveView")
@@ -52,25 +66,6 @@ struct ContentView: View {
                 Text("Choose an item from the sidebar")
             }
         }
-
-//        VStack {
-//            ForEach(viewModel.items) { item in
-//                Button(item.title) {
-//                    if item.title == "Volume" {
-//                        openWindow(id: "CarView")
-//                    } else if item.title == "Full spaces" {
-//                        Task {
-//                            let result = await openImmersiveSpace(id: "PlaneImmersiveView")
-//                            if case .error = result {
-//                                assertionFailure("Unable to open PlaneImmersiveView")
-//                            }
-//                        }
-//                    }
-//                }
-//                .padding()
-//                .glassBackgroundEffect()
-//            }
-//        }
     }
 }
 
